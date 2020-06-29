@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.54.10.10:3306/friday?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+
+#jwt:
+#  secret: ffjaksdfjaklf # 秘钥
+#  expiration: 3600000   # 过期时间 (秒)
+#  header: JWTHeaderName # 请求头信息
+
+# token配置
+token:
+  # 令牌自定义标识
+  header: Authorization
+  # 令牌秘钥
+  #  secret: abcdefghijklmnopqrstuvwxyz
+  secret: (EMOK:)_$^11244^%$_(IS:)_@@++--(COOL:)_++++_.sds_(GUY:)
+  # 令牌有效期
+  expireTime: 3600000

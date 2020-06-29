@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="https://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
+</head>
+<body>
+<h1>Friday权限管理系统</h1>
+<form action="/login" method="post">
+    <span>用户名称</span><input type="text" name="username" id="username"/> <br>
+    <span>用户密码</span><input type="password" name="password" id="password"/> <br>
+   <!-- <input type="submit"  value="登陆">-->
+    <input type="button" onclick="login()" value="登陆">
+</form>
+</body>
+<script>
+    function login() {
+        $.ajax({
+            type: "POST",
+            url: "/login",
+            data: {
+                "username": $("#username").val(),
+                "password": $("#password").val()
+            },
+            success: function (data) {
+                if(data.code == 200){
+                    alert(data.token);
+
+                    location.href = "/index";
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    }
+</script>
+</html>
